@@ -15,6 +15,11 @@ public class SDES {
 	private boolean[] k1;
 	private boolean[] k2;
 	
+	//static constants
+	
+	private static final int[] ip = {1, 5, 2, 0, 3, 7, 4, 6};
+	private static final int[] ipInv = {3, 0, 2, 4, 6, 1, 7, 5};
+	
 	private static final byte[][] s0 = {
 			{01,00,11,10},
 			{11,10,01,00},
@@ -72,7 +77,13 @@ public class SDES {
 	 * @return
 	 */
 	public byte	decryptByte(byte b) {
-		return b;
+		boolean[] temp = byteToBitArray(b, 8);
+		temp = expPerm(temp, ip);
+		temp = f(temp, k2);
+		temp = concat(rh(temp), lh(temp)); //swap left and right halves
+		temp = f(temp, k1);
+		temp = expPerm(temp, ipInv);	
+		return bitArrayToByte(temp);
 	}
 	
 	/**
@@ -97,7 +108,13 @@ public class SDES {
 	 * @return
 	 */
 	public byte	encryptByte(byte b) {
-		return b;
+		boolean[] temp = byteToBitArray(b, 8);
+		temp = expPerm(temp, ip);
+		temp = f(temp, k1);
+		temp = concat(rh(temp), lh(temp)); //swap left and right halves
+		temp = f(temp, k2);
+		temp = expPerm(temp, ipInv);	
+		return bitArrayToByte(temp);
 	}
 	
 	public boolean[] expPerm(boolean[] inp, int[] epv) {
@@ -144,8 +161,7 @@ public class SDES {
 	 * @param byteArray
 	 */
 	public void	show(byte[] byteArray) {
-		String output = "";
-		System.out.println(Arrays.toString(byteArray));
+		System.out.println(byteArrayToString(byteArray));
 	}
 	
 	public boolean[] xor(boolean[] x, boolean[] y) {
