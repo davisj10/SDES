@@ -33,7 +33,7 @@ public class SDES {
 	 * @return Byte represented my the given bit array
 	 */
 	public int bitArrayToByte(boolean[] inp) {
-		 byte result;
+		/* byte result;
 		 StringBuilder sr = new StringBuilder();
 		 for (boolean b : inp){
 		 	if (b == true){
@@ -44,9 +44,9 @@ public class SDES {
 
 		 String byteString = sr.toString();
 
-		 result = Byte.parseByte(byteString, 2);
+		 result = Byte.parseByte(byteString, 2); */
 
-		 return result;
+		 return null;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class SDES {
 	 * @return Bit array that represents the given byte
 	 */
 	public boolean[] byteToBitArray(byte b, int size) {
-/*		boolean[] result = new boolean[size];
+		boolean[] result = new boolean[size];
 		StringBuilder sr = new StringBuilder();
 		String test = Integer.toBinaryString(b);
 		if (b < 0){
@@ -88,8 +88,8 @@ public class SDES {
 		for (int i = 0; i < size; i++){
 			result[i] = bitString.charAt(i) == '1';
 		}
-*/
-		return null;
+
+		return result;
 	}
 
 	/**
