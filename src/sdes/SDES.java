@@ -47,6 +47,7 @@ public class SDES {
 
 	/**
 	 * Convert the given bit array to a single byte
+	 * 
 	 * @author Tyler Robinson
 	 * @param inp A bit array, max length is 8 bits
 	 * @return Byte represented my the given bit array
@@ -92,6 +93,7 @@ public class SDES {
 
 	/**
 	 * Convert the given byte array to a String
+	 * 
 	 * @author Tyler Robinson
 	 * @param inp An array of bytes, hopefully storing the codes of printable characters
 	 * @return The characters as a string
@@ -102,6 +104,7 @@ public class SDES {
 
 	/**
 	 * Convert the given byte to a bit array, of the given size
+	 * 
 	 * @author Tyler Robinson
 	 * @param b The byte to be converted
 	 * @param size The size of the resulting bit array.
@@ -133,6 +136,7 @@ public class SDES {
 
 	/**
 	 * Concatenate the two bit arrays, x||y
+	 * 
 	 * @author Tyler Robinson
 	 * @param x The bit array that will become the left of the resultant array
 	 * @param y The bit array that will become the right of the resultant array
@@ -152,6 +156,7 @@ public class SDES {
 	}
 
 	/**
+	 * Decrypt the given byte array.
 	 *
 	 * @author Justin Davis
 	 * @param cipher Array of bytes to be Decrypted
@@ -159,6 +164,7 @@ public class SDES {
 	 */
 	public byte[] decrypt(byte[] cipher) {
 		int size = cipher.length;
+		//individually decrypts each byte
 		for(int i = 0; i < size; i++) {
 			cipher[i] = decryptByte(cipher[i]);
 		}
@@ -166,12 +172,14 @@ public class SDES {
 	}
 
 	/**
+	 * Decrypt a single byte using SDES.
 	 *
 	 * @author Justin Davis
 	 * @param b Byte to be decrypted
 	 * @return Decrypted byte
 	 */
 	public byte	decryptByte(byte b) {
+		//convert byte array to array of bits
 		boolean[] temp = byteToBitArray(b, 8);
 		temp = expPerm(temp, IP);
 		temp = f(temp, k2);
@@ -182,14 +190,17 @@ public class SDES {
 	}
 
 	/**
+	 * Encrypt the given string using SDES Each character produces a byte of cipher.
 	 *
 	 * @author Justin Davis
 	 * @param msg Byte array to be encrypted
 	 * @return Encrypted byte array
 	 */
 	public byte[] encrypt(String msg) {
+		//convert message to byte array
 		byte[] cipher = msg.getBytes();
 		int size = cipher.length;
+		//encrypts each byte in the byte array
 		for(int i = 0; i < size; i++) {
 			cipher[i] = encryptByte(cipher[i]);
 		}
@@ -197,11 +208,14 @@ public class SDES {
 	}
 
 	/**
+	 * Encrypt a single byte using SDES
+	 * 
 	 * @author Justin Davis
 	 * @param b Byte to be encrypted
 	 * @return Encrypted byte
 	 */
 	public byte	encryptByte(byte b) {
+		//convert byte array to an array of bits
 		boolean[] temp = byteToBitArray(b, 8);
 		temp = expPerm(temp, IP);
 		temp = f(temp, k1);
@@ -213,8 +227,9 @@ public class SDES {
 
 	/**
 	 * Expand and/or permutate and/or select from the bit array, inp, producing
-	 * an expanded/permutated/selected bit array.  Use the expansion.permutation
-	 * verctor epv.
+	 * an expanded/permutated/selected bit array.  Use the expansion permutation
+	 * vector epv.
+	 * 
 	 * @param inp A bit array represented as booleans, true=1, false=0.
 	 * @param epv An expansion and/or permutation and/or selection vector; all numbers in epv must be in the range
 	 *            0..inp.length-1, i.e. they must be valid subscripts for inp.
@@ -235,6 +250,7 @@ public class SDES {
      * This is the 'round' function
      * It is its own inverse
      * f(x,k) = L(x) xor F(R(x),k)) || R(x)
+     * 
      * @param x Byte to be decrypted
      * @param k Key for the current round
      * @return Result of the round' function
@@ -249,6 +265,7 @@ public class SDES {
 
     /**
      * F(k,x) is a Feistel function F(k,x) = P4(s0(L(k xor EP(x))) || s1 (R (k xor EP(x)))
+     * 
      * @param k Key for the current round
      * @param x Left half of the byte being decrypted
      * @return The result of the Feistel function
@@ -271,6 +288,7 @@ public class SDES {
 	/**
 	 * Get a 10 bit key from the keyboard, such as 1010101010.
 	 * Store it as an array of booleans in a field
+	 * 
 	 * @author Tyler Robinson
 	 * @param scanner Scanner used to receive key from user
 	 */
@@ -291,6 +309,7 @@ public class SDES {
 
 	/**
 	 * Left half of x, L(x)
+	 * 
 	 * @author Tyler Robinson
 	 * @param inp Array to take the left half from
 	 * @return a bit array which is the left half of the parameter, inp.
@@ -306,6 +325,7 @@ public class SDES {
 
 	/**
 	 * Right half of x, R(x)
+	 * 
 	 * @author Tyler Robinson
 	 * @param inp Array to take the right half of
 	 * @return a bit array which is the right half of the parameter, inp.
@@ -320,7 +340,7 @@ public class SDES {
 	}
 
 	/**
-	 * May need to use stdout!!!
+	 * Send the bitArray to stdout as 1's and 0's.
 	 *
 	 * @author Justin Davis
 	 * @param inp Boolean array to print to screen
@@ -335,7 +355,7 @@ public class SDES {
 	}
 
 	/**
-	 * May need to use stdout!!!
+	 * Send the byteArray to stdout.
 	 *
 	 * @author Justin Davis
 	 * @param byteArray Byte array to print to the screen
@@ -351,6 +371,7 @@ public class SDES {
 
 	/**
 	 * Exclusive OR. x and y must have the same length. x xor y is the same as x != y
+	 * 
 	 * @author Tyler Robinson
 	 * @param x Bit array to compare against y
 	 * @param y Bit array to compare against x
