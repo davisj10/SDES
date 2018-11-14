@@ -1,0 +1,95 @@
+Group Members: Justin, Quentin and Tyler
+
+*This output shows the testing of our SDES class.
+*It shows that our class can encrypt and decrypt messages. It also shows that when using a different key than what was used to encrypt a message, it will not decrypt correctly.
+
+Please input a 10 digit key to be used. Then press enter.
+0111111101
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+1
+Must first encrypt some plain text!
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+2
+Enter cipher: -115 -17 -47 -113 -43 -47 15 84 -43 -113 -17 84 -43 79 58 15 64 -113 -43 65 -47 127 84 64 -43 -61 79 -43 93 -61 -14 15 -43 -113 84 -47 127 -43 127 84 127 10 84 15 64 43
+Decrpyted text: What are the first names of your team members?
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+1
+Plain text: Our names are Justin, Quentin and Tyler.
+Cipher: 107 -14 15 -43 65 -47 127 84 64 -43 -47 15 84 -43 76 -14 64 -113 58 65 62 -43 31 -14 84 65 -113 58 65 -43 -47 65 -124 -43 39 93 -86 84 15 117 
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+1
+Decrypted text: Our names are Justin, Quentin and Tyler.
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+2
+Enter cipher: 107 -14 15 -43 65 -47 127 84 64 -43 -47 15 84 -43 76 -14 64 -113 58 65 62 -43 31 -14 84 65 -113 58 65 -43 -47 65 -124 -43 39 93 -86 84 15 117
+Decrpyted text: Our names are Justin, Quentin and Tyler.
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+3
+Please input a new 10 digit key to be used, then press enter.
+1111001111
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+1
+Decrypted text: Ω÷?ıEg__∞ıg?_ıh÷∞Y_E_ı?÷_EY_EıgEÄıµ)é_?U
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+3
+Invalid selection! Try again.
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+1
+Plain text: What are the first names of your team members?
+Cipher: 6 74 -125 36 106 -125 62 -58 106 36 74 -58 106 88 -83 62 -17 36 106 -10 -125 -24 -58 -17 106 -113 88 106 -68 -113 -122 62 106 36 -58 -125 -24 106 -24 -58 -24 -35 -58 62 -17 81 
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+1
+Decrypted text: What are the first names of your team members?
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+2
+Enter cipher: -115 -17 -47 -113 -43 -47 15 84 -43 -113 -17 84 -43 79 58 15 64 -113 -43 65 -47 127 84 64 -43 -61 79 -43 93 -61 -14 15 -43 -113 84 -47 127 -43 127 84 127 10 84 15 64 43
+Decrpyted text: ¡s]oÿ]ÈµÿosµÿΩ7ÈMoÿœ]üµMÿqΩÿ‰q_Èÿoµ]üÿüµü<µÈM$
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+3
+Please input a new 10 digit key to be used, then press enter.
+0111111101
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+1
+Decrypted text: Æß∆…Î∆≥ÉÎ…ßÉÎ?Ë≥C…Î;∆≠ÉCÎŒ?Î¥Œ.≥Î…É∆≠Î≠É≠ÿÉ≥C˘
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+2
+Would you like to decrypt (1) current encrypted text, or (2) new cipher?
+2
+Enter cipher: -115 -17 -47 -113 -43 -47 15 84 -43 -113 -17 84 -43 79 58 15 64 -113 -43 65 -47 127 84 64 -43 -61 79 -43 93 -61 -14 15 -43 -113 84 -47 127 -43 127 84 127 10 84 15 64 43
+Decrpyted text: What are the first names of your team members?
+
+Press 1 to encrypt. 2 to decrypt. 3 to change key. 4 to exit.
+4
+Goodbye...
+
