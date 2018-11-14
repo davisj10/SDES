@@ -72,6 +72,9 @@ public class Driver
 			case "4": //stops the program
 				System.out.println("Goodbye...");
 				System.exit(0);
+			default:
+				System.out.println("Invalid selection! Try again.\n");
+				break;
 			}
 		}
 	}
